@@ -2,9 +2,11 @@ using System.ComponentModel.DataAnnotations;
 using GameStore.Api;
 using GameStore.Api.Data;
 using GameStore.Api.Features.Games.CreateGame;
+using GameStore.Api.Features.Games.DeleteGame;
 using GameStore.Api.Features.Games.GetGame;
 using GameStore.Api.Features.Games.GetGames;
 using GameStore.Api.Features.Games.UpdateGame;
+using GameStore.Api.Features.Generes.GetGeneres;
 using GameStore.Api.Models;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -27,17 +29,13 @@ app.MapCreateGame(data);
 app.MapUpdateGame(data);
 
 
-app.MapDelete("/games/{id}",(Guid id) => {
-    data.RemoveGame(id);
-    return Results.NoContent();
-});
+app.MapDeleteGame(data);
 
-app.MapGet("/generes",() => 
-data.GetGeneres().Select(genere => new GenereDto(genere.Id , genere.Name)));
+app.MapGetGenres(data);
+
 
 app.Run();
 
 
-public record GenereDto(Guid Id,string Name);
 
 
