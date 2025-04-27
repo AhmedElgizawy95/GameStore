@@ -4,6 +4,7 @@ using GameStore.Api.Data;
 using GameStore.Api.Features.Games.CreateGame;
 using GameStore.Api.Features.Games.GetGame;
 using GameStore.Api.Features.Games.GetGames;
+using GameStore.Api.Features.Games.UpdateGame;
 using GameStore.Api.Models;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -23,28 +24,8 @@ app.MapGetGame(data);
 
 app.MapCreateGame(data);
 
-app.MapPut("/games/{id}",(Guid id, UpdateGameDto gameDto) => {
+app.MapUpdateGame(data);
 
-    var  existingGame = data.GetGame(id);
-    if(existingGame is null)
-    {
-        return Results.NotFound();
-    }
-
-    var genre = data.GetGenere(id);
-    if(genre is null)
-    {
-        return Results.BadRequest("Invalid Genre");
-    }
-
-    existingGame.Name = gameDto.Name;
-    existingGame.Genere=genre;
-    existingGame.Price = gameDto.Price;
-    existingGame.ReleaseDate = gameDto.ReleaseDate;
-    existingGame.Description = gameDto.Description;
-
-    return  Results.NoContent();
-    }).WithParameterValidation();   
 
 app.MapDelete("/games/{id}",(Guid id) => {
     data.RemoveGame(id);
@@ -59,15 +40,4 @@ app.Run();
 
 public record GenereDto(Guid Id,string Name);
 
-
-public record UpdateGameDto(
-[Required]
-[StringLength(50)]
-string Name,
-Guid GenereId,
-decimal Price,
-DateOnly ReleaseDate,
-[Required]
-[StringLength(500)]
-string Description);
 
