@@ -1,7 +1,7 @@
 GET http://localhost:5114/games
 
 ###
-GET http://localhost:5114/games/4bbd19e4-95cf-46e9-b426-f7e3b65f56eb
+GET http://localhost:5114/games/d9260447-ca66-45bf-80e6-79c59c329001
 ###
 GET http://localhost:5114/generes
 ###

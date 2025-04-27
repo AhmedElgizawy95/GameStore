@@ -29,3 +29,4 @@ C:\Users\sendp\Downloads\GameStore\Backend\src\GameStore.Api\bin\Debug\net8.0\Mi
 C:\Users\sendp\Downloads\GameStore\Backend\src\GameStore.Api\obj\Debug\net8.0\GameStore.Api.csproj.AssemblyReference.cache
 C:\Users\sendp\Downloads\GameStore\Backend\src\GameStore.Api\obj\Debug\net8.0\GameStore.Api.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\sendp\Downloads\GameStore\Backend\src\GameStore.Api\obj\Debug\net8.0\GameStor.5118A84D.Up2Date
+C:\Users\sendp\Downloads\GameStore\Backend\src\GameStore.Api\obj\Debug\net8.0\GameStore.Api.sourcelink.json

@@ -1,8 +1,27 @@
 using System;
+using GameStore.Api.Data;
+using GameStore.Api.Features.Games.Constants;
+using GameStore.Api.Models;
 
 namespace GameStore.Api.Features.Games.GetGame;
 
-public class GetGameEndpoint
+public static class GetGameEndpoint
 {
-public static void MapGetGame(this IEndpointRouteBuilder app , )
+
+public static void MapGetGame(this IEndpointRouteBuilder app, GameStoreData data)
+{
+    app.MapGet("/games/{id}",(Guid id) => {
+
+    Game? game = data.GetGame(id);
+    return  game is null ? Results.NotFound() : Results.Ok(new GameDetailsDto(game.Id,
+    game.Name,
+    game.Genere.Id,
+    game.Price,
+    game.ReleaseDate,
+    game.Description
+    ));
+    
+    }).WithName(EndpointNames.GetGame);
+
+}
 }
