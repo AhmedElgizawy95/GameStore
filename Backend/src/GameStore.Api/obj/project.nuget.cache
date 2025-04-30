@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "a7xBvSqk0Z0=",
+  "dgSpecHash": "7z40XueERY4=",
   "success": true,
-  "projectFilePath": "C:\\Users\\sendp\\Downloads\\GameStore\\Backend\\src\\GameStore.Api\\GameStore.Api.csproj",
+  "projectFilePath": "C:\\Users\\aio\\Desktop\\GameStore\\Backend\\src\\GameStore.Api\\GameStore.Api.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\sendp\\.nuget\\packages\\microsoft.openapi\\1.4.3\\microsoft.openapi.1.4.3.nupkg.sha512",
-    "C:\\Users\\sendp\\.nuget\\packages\\minimalapis.extensions\\0.11.0\\minimalapis.extensions.0.11.0.nupkg.sha512",
-    "C:\\Users\\sendp\\.nuget\\packages\\minivalidation\\0.8.0\\minivalidation.0.8.0.nupkg.sha512"
+    "C:\\Users\\aio\\.nuget\\packages\\microsoft.openapi\\1.4.3\\microsoft.openapi.1.4.3.nupkg.sha512",
+    "C:\\Users\\aio\\.nuget\\packages\\minimalapis.extensions\\0.11.0\\minimalapis.extensions.0.11.0.nupkg.sha512",
+    "C:\\Users\\aio\\.nuget\\packages\\minivalidation\\0.8.0\\minivalidation.0.8.0.nupkg.sha512"
   ],
   "logs": []
 }

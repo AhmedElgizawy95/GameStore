@@ -7,7 +7,7 @@ public static class GetGenresEndpoint
 {
  public static void MapGetGenres(this IEndpointRouteBuilder app,GameStoreData data)
  {
-    app.MapGet("/generes",() => 
+    app.MapGet("/",() => 
 data.GetGeneres().Select(genere => new GenereDto(genere.Id , genere.Name)));
 
  }

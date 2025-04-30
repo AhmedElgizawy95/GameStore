@@ -1,7 +1,7 @@
 GET http://localhost:5114/games
 
 ###
-GET http://localhost:5114/games/d9260447-ca66-45bf-80e6-79c59c329001
+GET http://localhost:5114/games/23012e52-81e5-4037-8d21-5ff9d86d891f
 ###
 GET http://localhost:5114/generes
 ###
@@ -28,4 +28,4 @@ Content-Type: application/json
 }
 
 ###
-DELETE http://localhost:5114/games/6ede27c6-eeca-47ed-a313-2ca3fdbb6ecf
+DELETE http://localhost:5114/games/23012e52-81e5-4037-8d21-5ff9d86d891f

@@ -50,7 +50,6 @@ new Game
 ]; 
 }
 
-
 public IEnumerable<Game> GetGames() => games; //return games
 
 public Game? GetGame(Guid id) => games.Find(game=>game.Id == id);
