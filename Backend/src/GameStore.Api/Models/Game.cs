@@ -8,13 +8,11 @@ public class Game
 
 public Guid Id{ get; set; }
 
-[Required]
-[StringLength(20)]
 public required string Name { get; set; } 
 
-public required Genere Genere  { get; set; }
+public  Genere? Genere  { get; set; }
 
-[Range(1,100)]
+public Guid GenereId {get;set;}
 public decimal Price { get; set; }
 
 public DateOnly ReleaseDate { get; set; }

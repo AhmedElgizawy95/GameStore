@@ -9,22 +9,25 @@ POST http://localhost:5114/games
 Content-Type: application/json
 
 {
-    "name":"",
-    "genereId":"",
-    "price":19.99,
-    "releaseDate":"2011-11-18",
-    "description":""
+    "name": "Minecraft",
+    "genereId":"cbb77890-c040-4e1b-84ee-c7e3cf534898",
+    
+    "price": 9.99,
+    "releaseDate": "1992-07-15",
+    "description":"Survive the night"
 }
 
 ###
-PUT http://localhost:5114/games/6bad81cc-2143-4484-b2bd-9ce807d0a80e
+PUT http://localhost:5114/games
 Content-Type: application/json
 
 {
-    "name": "Street Fighter II Turbo",
-    "genere": "Fighting",
+    "name": "Minecraft",
+    "genreId":"eb0d3649-e0cc-4b7b-802c-5b5e7a6ec61e",
+    
     "price": 9.99,
-    "releaseDate": "1992-07-15"
+    "releaseDate": "1992-07-15",
+    "description":"Survive the night"
 }
 
 ###
