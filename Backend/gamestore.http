@@ -1,7 +1,7 @@
 GET http://localhost:5114/games
 
 ###
-GET http://localhost:5114/games/23012e52-81e5-4037-8d21-5ff9d86d891f
+GET http://localhost:5114/games/3ECAC533-8B0D-4F64-9CC2-A89FC4C13D64
 ###
 GET http://localhost:5114/generes
 ###
@@ -9,26 +9,26 @@ POST http://localhost:5114/games
 Content-Type: application/json
 
 {
-    "name": "Minecraft",
-    "genereId":"cbb77890-c040-4e1b-84ee-c7e3cf534898",
+    "name": "TEST Game",
+    "genereId":"B8936AFA-3526-4E19-84AA-71951806AA06",
     
-    "price": 9.99,
+    "price": 19.99,
     "releaseDate": "1992-07-15",
     "description":"Survive the night"
 }
 
 ###
-PUT http://localhost:5114/games
+PUT http://localhost:5114/games/3ECAC533-8B0D-4F64-9CC2-A89FC4C13D64
 Content-Type: application/json
 
 {
     "name": "Minecraft",
-    "genreId":"eb0d3649-e0cc-4b7b-802c-5b5e7a6ec61e",
+    "genereId":"5A4E861F-05D7-41AC-A092-69F8F459C612",
     
-    "price": 9.99,
+    "price": 19.99,
     "releaseDate": "1992-07-15",
-    "description":"Survive the night"
+    "description":"Survive the day"
 }
 
 ###
-DELETE http://localhost:5114/games/23012e52-81e5-4037-8d21-5ff9d86d891f
+DELETE http://localhost:5114/games/3126FF52-7A21-4DF1-8EE9-5E81F3FE1F0B

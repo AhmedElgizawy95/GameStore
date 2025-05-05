@@ -21,15 +21,18 @@ var connString = builder.Configuration.GetConnectionString("GameStore");
 //builder.Services.AddDbContext<GameStoreContext>(options => options.UseSqlite(connString));
 
 builder.Services.AddSqlite<GameStoreContext>(connString);
+
 //builder.Services.AddScoped<GameDataLogger>();
-builder.Services.AddTransient<GameDataLogger>();
-builder.Services.AddSingleton<GameStoreData>();
+//builder.Services.AddTransient<GameDataLogger>();
+//builder.Services.AddSingleton<GameStoreData>();
 
 var app = builder.Build();
 
 app.MapGames();
 
 app.MapGenres();
+
+app.InitializeDb();
 
 app.Run();
 

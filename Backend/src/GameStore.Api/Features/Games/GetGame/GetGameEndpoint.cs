@@ -8,20 +8,21 @@ namespace GameStore.Api.Features.Games.GetGame;
 public static class GetGameEndpoint
 {
 
-public static void MapGetGame(this IEndpointRouteBuilder app)
-{
-    app.MapGet("/{id}",(Guid id, GameStoreData data) => {
+    public static void MapGetGame(this IEndpointRouteBuilder app)
+    {
+        app.MapGet("/{id}", (Guid id, GameStoreContext dbContext) =>
+        {
 
-    Game? game = data.GetGame(id);
-    return  game is null ? Results.NotFound() : Results.Ok(new GameDetailsDto(game.Id,
-    game.Name,
-    game.GenereId,
-    game.Price,
-    game.ReleaseDate,
-    game.Description
-    ));
-    
-    }).WithName(EndpointNames.GetGame);
+            Game? game = dbContext.Games.Find(id);
+            return game is null ? Results.NotFound() : Results.Ok(new GameDetailsDto(game.Id,
+            game.Name,
+            game.GenereId,
+            game.Price,
+            game.ReleaseDate,
+            game.Description
+            ));
 
-}
+        }).WithName(EndpointNames.GetGame);
+
+    }
 }
