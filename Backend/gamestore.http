@@ -1,7 +1,7 @@
 GET http://localhost:5114/games
 
 ###
-GET http://localhost:5114/games/3ECAC533-8B0D-4F64-9CC2-A89FC4C13D64
+GET http://localhost:5114/games/047c0695-9bae-4342-9a68-a36735d4f73c
 ###
 GET http://localhost:5114/generes
 ###
@@ -9,7 +9,7 @@ POST http://localhost:5114/games
 Content-Type: application/json
 
 {
-    "name": "TEST Game",
+    "name": "TEST Game 2",
     "genereId":"B8936AFA-3526-4E19-84AA-71951806AA06",
     
     "price": 19.99,

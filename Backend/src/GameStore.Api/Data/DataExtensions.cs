@@ -1,4 +1,6 @@
 using System;
+using System.Runtime.CompilerServices;
+using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 
 namespace GameStore.Api.Data;
@@ -7,25 +9,25 @@ public static class DataExtensions
 {
 
 
-public static void InitializeDb(this WebApplication app)
+public static async Task InitializeDbAsync(this WebApplication app)
 {
-   app.MigrateDb();
-   app.SeedDb();
+   await app.MigrateDbAsync();
+   await app.SeedDbAsync();
 
 }
 
 
 
- public static void MigrateDb(this WebApplication app)
+ public static async Task MigrateDbAsync(this WebApplication app)
  {
     using var scope = app.Services.CreateScope();
      GameStoreContext dbContext = scope.ServiceProvider.GetRequiredService<GameStoreContext>();
      
      //updates database automatically
-     dbContext.Database.Migrate();
+     await dbContext.Database.MigrateAsync();
  }
 
- public static void SeedDb(this WebApplication app)
+ public static async Task SeedDbAsync(this WebApplication app)
  {
    using var scope = app.Services.CreateScope();
    GameStoreContext dbContext = scope.ServiceProvider.GetRequiredService<GameStoreContext>();
@@ -56,7 +58,7 @@ public static void InitializeDb(this WebApplication app)
    );
    
    
-   dbContext.SaveChanges();
+  await dbContext.SaveChangesAsync();
    
   }
   
