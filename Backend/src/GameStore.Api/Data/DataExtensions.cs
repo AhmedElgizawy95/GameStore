@@ -13,6 +13,8 @@ public static async Task InitializeDbAsync(this WebApplication app)
 {
    await app.MigrateDbAsync();
    await app.SeedDbAsync();
+   app.Logger.LogInformation(13,"Database Initialized");
+
 
 }
 

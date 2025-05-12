@@ -10,7 +10,10 @@ public static class CreateGameEndpoint
  public static void MapCreateGame(this IEndpointRouteBuilder app)
  {
     
-app.MapPost("/",async (CreateGameDto gameDto, GameStoreContext dbContext ) => {
+app.MapPost("/",async (CreateGameDto gameDto, 
+GameStoreContext dbContext,
+//category associated with logger objects
+ILogger<Program> logger ) => {
 
 
 var game = new Game{
@@ -25,6 +28,10 @@ var game = new Game{
     
     dbContext.Games.Add(game);
     await dbContext.SaveChangesAsync();
+    
+    logger.LogInformation("Created Game {GameName} with Price {GamePrice}",game.Name,game.Price);
+
+
      //logger.PrintGames();
     return Results.CreatedAtRoute(EndpointNames.GetGame,new {id = game.Id},
     new GameDetailsDto(game.Id,game.Name,game.GenereId,game.Price,game.ReleaseDate,game.Description));

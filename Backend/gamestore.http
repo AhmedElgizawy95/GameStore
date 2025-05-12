@@ -9,12 +9,12 @@ POST http://localhost:5114/games
 Content-Type: application/json
 
 {
-    "name": "TEST Game 2",
-    "genereId":"B8936AFA-3526-4E19-84AA-71951806AA06",
+    "name": "Forza Horizon 5",
+    "genereId":"d4894a88-fd89-4239-81b2-5e174d1e5c6e",
     
-    "price": 19.99,
-    "releaseDate": "1992-07-15",
-    "description":"Survive the night"
+    "price": 59.99,
+    "releaseDate": "2020-07-15",
+    "description":"Ultimate Horizon adventur awaits !"
 }
 
 ###
@@ -31,4 +31,4 @@ Content-Type: application/json
 }
 
 ###
-DELETE http://localhost:5114/games/3126FF52-7A21-4DF1-8EE9-5E81F3FE1F0B
+DELETE http://localhost:5114/games/9735865f-5058-41d2-8084-55315ca6332d
