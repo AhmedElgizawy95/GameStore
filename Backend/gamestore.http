@@ -1,4 +1,4 @@
-GET http://localhost:5114/games
+GET http://localhost:5114/games?name=s
 
 ###
 GET http://localhost:5114/games/047c0695-9bae-4342-9a68-a36735d4f73c
