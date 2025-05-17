@@ -4,10 +4,11 @@ public record GetGamesDto(int PageNumber = 1, int PageSize = 5, string? Name = n
 
 public record GamesPageDto(int TotalPages, IEnumerable<GameSummaryDto> Data); 
 
-public record GameSummaryDto(Guid Id, 
-string Name, 
-string Genere , 
-decimal Price , 
-DateOnly RealeaseDate);
+public record GameSummaryDto(Guid Id,
+string Name,
+string Genere,
+decimal Price,
+DateOnly RealeaseDate,
+string ImageUri);
 
 

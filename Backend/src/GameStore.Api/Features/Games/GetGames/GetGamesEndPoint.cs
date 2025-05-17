@@ -29,7 +29,8 @@ var gamesOnPage = await filteredGames
     game.Name,
     game.Genere!.Name,
     game.Price,
-    game.ReleaseDate))
+    game.ReleaseDate,
+    game.ImageUri))
     .AsNoTracking().ToListAsync();
 
     var totalGames = await filteredGames.CountAsync();

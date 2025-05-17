@@ -38,7 +38,8 @@ public static class GetGameEndpoint
             game.GenereId,
             game.Price,
             game.ReleaseDate,
-            game.Description
+            game.Description,
+            game.ImageUri
             ));
 
 
