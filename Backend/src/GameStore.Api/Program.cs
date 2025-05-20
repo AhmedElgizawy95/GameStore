@@ -33,7 +33,10 @@ builder.Services.AddHttpLogging(options => {
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddHttpContextAccessor().AddSingleton<FileUploader>();
-
+builder.Services.AddAuthentication().AddJwtBearer(options =>
+{
+    options.MapInboundClaims = false;
+});
 var app = builder.Build();
 
 

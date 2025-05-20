@@ -9,6 +9,7 @@ string Name,
 string Genere,
 decimal Price,
 DateOnly RealeaseDate,
-string ImageUri);
+string ImageUri,
+string LastUpdatedBy);
 
 

@@ -22,6 +22,7 @@ Guid GenereId,
 decimal Price,
 DateOnly RealeaseDate,
 string Description,
-string ImageUri);
+string ImageUri,
+string LastUpdatedBy);
 
 

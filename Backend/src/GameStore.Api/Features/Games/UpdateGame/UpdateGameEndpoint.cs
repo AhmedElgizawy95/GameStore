@@ -1,4 +1,6 @@
 using System;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
 using GameStore.Api.Data;
 using GameStore.Api.Features.Games.Constants;
 using GameStore.Api.Shared.FileUpload;
@@ -13,8 +15,19 @@ public static void MapUpdateGame(this IEndpointRouteBuilder app)
     app.MapPut("/{id}",async (Guid id,
     [FromForm] UpdateGameDto gameDto,
     GameStoreContext dbContext,
-    FileUploader fileUploader) => {
+    FileUploader fileUploader,
+    ClaimsPrincipal user) => {
 
+        if (user?.Identity?.IsAuthenticated == false)
+        {
+            return Results.Unauthorized();
+        }
+
+        var currentUserId = user?.FindFirstValue(JwtRegisteredClaimNames.Sub);
+        if (string.IsNullOrEmpty(currentUserId))
+        {
+            return Results.Unauthorized();
+        }
 
         var  existingGame = await dbContext.Games.FindAsync(id);
         
@@ -37,10 +50,11 @@ public static void MapUpdateGame(this IEndpointRouteBuilder app)
                 existingGame.ImageUri = fileUploadResult.FileUrl!;
             }
         existingGame.Name = gameDto.Name;
-    existingGame.GenereId=gameDto.GenereId;
-    existingGame.Price = gameDto.Price;
-    existingGame.ReleaseDate = gameDto.ReleaseDate;
-    existingGame.Description = gameDto.Description;
+        existingGame.GenereId=gameDto.GenereId;
+        existingGame.Price = gameDto.Price;
+        existingGame.ReleaseDate = gameDto.ReleaseDate;
+        existingGame.Description = gameDto.Description;
+        existingGame.LastUpdatedBy = currentUserId;
 
     await dbContext.SaveChangesAsync();
 

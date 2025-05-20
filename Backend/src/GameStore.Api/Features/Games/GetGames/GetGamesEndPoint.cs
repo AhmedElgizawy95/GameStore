@@ -18,7 +18,8 @@ app.MapGet("/", async (GameStoreContext dbContext,
 var skipCount = (request.PageNumber - 1) * request.PageSize; 
 
 var filteredGames =  dbContext.Games
-                            .Where(game => string.IsNullOrEmpty(request.Name) || EF.Functions.Like(game.Name , $"%{request.Name}%"));
+                            .Where(game => string.IsNullOrEmpty(request.Name)
+                             || EF.Functions.Like(game.Name, $"%{request.Name}%"));
 var gamesOnPage = await filteredGames
 .OrderBy(game => game.Name)
 .Skip(skipCount)
@@ -30,7 +31,8 @@ var gamesOnPage = await filteredGames
     game.Genere!.Name,
     game.Price,
     game.ReleaseDate,
-    game.ImageUri))
+    game.ImageUri,
+    game.LastUpdatedBy))
     .AsNoTracking().ToListAsync();
 
     var totalGames = await filteredGames.CountAsync();

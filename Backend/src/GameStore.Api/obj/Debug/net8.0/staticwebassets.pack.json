@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\GameImages\\977e4259-984b-40f2-8a7b-ca8319a435bd.png"
     },
     {
+      "Id": "C:\\Users\\sendp\\Downloads\\GameStore\\Backend\\src\\GameStore.Api\\wwwroot\\GameImages\\ffc464f1-a975-42f5-b817-f0d2b74e32e4.png",
+      "PackagePath": "staticwebassets\\GameImages\\ffc464f1-a975-42f5-b817-f0d2b74e32e4.png"
+    },
+    {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.GameStore.Api.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },
